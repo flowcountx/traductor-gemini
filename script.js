@@ -20,7 +20,7 @@ if (localStorage.getItem('darkMode') !== 'disabled') {
 darkModeToggle.addEventListener('click', toggleDarkMode);
 
 
-// --- LÓGICA DEL TRADUCTOR ---
+// --- LÓGICA DEL TRADUTOR ---
 const textInput = document.getElementById('text-input');
 const languageSelector = document.getElementById('language-selector');
 const translateBtn = document.getElementById('translate-btn');
@@ -61,11 +61,12 @@ translateBtn.addEventListener('click', () => {
     outputContainer.innerText = '';
     translateBtn.disabled = true;
 
-    // --- CAMBIO IMPORTANTE AQUÍ ---
-    // Hemos reescrito el prompt en inglés para máxima fiabilidad.
+    // Usamos el prompt en inglés para máxima fiabilidad
     const prompt = `Translate the following text to ${targetLanguage}. The original language is auto-detected. Provide only the translated text as your response, without any additional explanations or introductions. The text to translate is: "${textToTranslate}"`;
 
-    puter.ai.chat(prompt, { model: 'gemini-1.0-pro' })
+    // --- CAMBIO CLAVE AQUÍ ---
+    // Hemos eliminado la especificación del modelo para usar el motor por defecto de Puter.js, que es más estable.
+    puter.ai.chat(prompt)
         .then(translatedText => {
             outputContainer.innerText = translatedText;
         })
