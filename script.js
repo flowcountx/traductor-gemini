@@ -27,35 +27,28 @@ const translateBtn = document.getElementById('translate-btn');
 const outputContainer = document.getElementById('output-container');
 const spinner = document.getElementById('spinner');
 
-// Nuevos botones
 const clearBtn = document.getElementById('clear-btn');
 const copyBtn = document.getElementById('copy-btn');
 
-
-// Evento para el botón de limpiar
 clearBtn.addEventListener('click', () => {
     textInput.value = '';
 });
 
-// Evento para el botón de copiar
 copyBtn.addEventListener('click', () => {
     const textToCopy = outputContainer.innerText;
     if (textToCopy) {
         navigator.clipboard.writeText(textToCopy).then(() => {
-            // Feedback visual para el usuario
             const originalText = copyBtn.textContent;
             copyBtn.textContent = '✅';
             setTimeout(() => {
                 copyBtn.textContent = originalText;
-            }, 2000); // Vuelve al ícono original después de 2 segundos
+            }, 2000);
         }).catch(err => {
             console.error('Error al copiar el texto: ', err);
         });
     }
 });
 
-
-// Evento principal para el botón de traducir
 translateBtn.addEventListener('click', () => {
     const textToTranslate = textInput.value;
     const targetLanguage = languageSelector.value;
@@ -68,7 +61,9 @@ translateBtn.addEventListener('click', () => {
     outputContainer.innerText = '';
     translateBtn.disabled = true;
 
-    const prompt = `Traduce el siguiente texto a ${targetLanguage}. Detecta automáticamente el idioma de origen. Responde únicamente con el texto traducido, sin añadir explicaciones ni nada más. El texto es: "${textToTranslate}"`;
+    // --- CAMBIO IMPORTANTE AQUÍ ---
+    // Hemos reescrito el prompt en inglés para máxima fiabilidad.
+    const prompt = `Translate the following text to ${targetLanguage}. The original language is auto-detected. Provide only the translated text as your response, without any additional explanations or introductions. The text to translate is: "${textToTranslate}"`;
 
     puter.ai.chat(prompt, { model: 'gemini-1.0-pro' })
         .then(translatedText => {
