@@ -9,7 +9,7 @@
     
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -18,6 +18,9 @@
 
         <h1>Traductor IA ⚡️</h1>
         
+        <!-- Nuevo contenedor para mostrar el idioma detectado -->
+        <div id="detected-language-box" class="detected-language"></div>
+
         <div class="translator-container">
             <div class="input-section">
                 <textarea id="text-input" placeholder="Escribe algo para traducir..."></textarea>
@@ -27,7 +30,6 @@
             <div class="controls">
                 <div class="language-selector-container">
                     <label for="language-selector">Traducir a:</label>
-                    <!-- Lista de idiomas con Alemán e Italiano añadidos -->
                     <select id="language-selector">
                         <option value="Inglés">Inglés</option>
                         <option value="Ruso">Ruso</option>

@@ -36,7 +36,6 @@ h1 {
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-/* Contenedores de texto ahora son relativos para posicionar los botones */
 .input-section, .output-section {
     position: relative;
 }
@@ -93,7 +92,7 @@ select {
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
 #translate-btn:hover {
@@ -140,7 +139,6 @@ select {
     color: #888;
 }
 
-/* --- Estilos para los nuevos botones de ícono --- */
 .icon-btn {
     position: absolute;
     top: 10px;
@@ -161,6 +159,17 @@ select {
 .icon-btn:hover {
     background-color: #e0e0e0;
     color: #333;
+}
+
+.detected-language {
+    background-color: #e7f3fe;
+    color: #1a73e8;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    display: none; /* Oculto por defecto, JS lo mostrará */
+    border: 1px solid #cce2ff;
 }
 
 /* --- Estilos del Modo Oscuro --- */
@@ -224,7 +233,6 @@ body.dark-mode select {
     color: #e0e0e0;
 }
 
-/* Botón principal de traducir con nuevo estilo en modo oscuro */
 body.dark-mode #translate-btn {
     background-color: #3a3a3a;
     color: #e0e0e0;
@@ -251,4 +259,10 @@ body.dark-mode .icon-btn {
 body.dark-mode .icon-btn:hover {
     background-color: #3a3a3a;
     color: #e0e0e0;
+}
+
+body.dark-mode .detected-language {
+    background-color: #2a3a50;
+    color: #a8c7fa;
+    border-color: #4a5c7a;
 }
