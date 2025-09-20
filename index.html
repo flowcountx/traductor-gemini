@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traductor IA</title>
+    
+    <!-- Incluimos la librería mágica de Puter.js -->
+    <script src="https://js.puter.com/v2/"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Botón para cambiar el tema -->
+        <button id="dark-mode-toggle">🌙</button>
+
+        <h1>Traductor IA ⚡️</h1>
+        <p>Potenciado por Puter.js</p>
+        
+        <div class="translator-container">
+            <div class="input-section">
+                <textarea id="text-input" placeholder="Escribe algo para traducir..."></textarea>
+            </div>
+            
+            <div class="controls">
+                <div class="language-selector-container">
+                    <label for="language-selector">Traducir a:</label>
+                    <!-- Lista de idiomas actualizada -->
+                    <select id="language-selector">
+                        <option value="Español">Español</option>
+                        <option value="Francés">Francés</option>
+                        <option value="Inglés">Inglés</option>
+                        <option value="Ruso">Ruso</option>
+                    </select>
+                </div>
+                <button id="translate-btn">Traducir</button>
+            </div>
+
+            <div class="output-section">
+                <div id="spinner" class="spinner" style="display: none;"></div>
+                <div id="output-container" class="output-text"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
