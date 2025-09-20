@@ -22,7 +22,7 @@ body {
 h1 {
     color: #1a73e8;
     font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem; /* Aumentamos el margen para separar del cuadro */
 }
 
 .translator-container {
@@ -46,7 +46,7 @@ textarea, .output-text {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 1rem;
-    padding-right: 45px; /* Espacio para los botones de ícono */
+    padding-right: 45px;
     font-size: 1rem;
     font-family: inherit;
     box-sizing: border-box;
@@ -66,6 +66,13 @@ textarea:focus {
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
+}
+
+/* Nuevo estilo para el contenedor de la izquierda */
+.left-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .language-selector-container {
@@ -161,15 +168,16 @@ select {
     color: #333;
 }
 
+/* Estilos modificados para el cuadro de idioma detectado */
 .detected-language {
     background-color: #e7f3fe;
     color: #1a73e8;
     padding: 0.5rem 1rem;
-    border-radius: 20px;
+    border-radius: 8px; /* Hacemos que coincida con los otros elementos */
     font-size: 0.9rem;
-    margin-bottom: 1.5rem;
-    display: none; /* Oculto por defecto, JS lo mostrará */
+    display: none; /* Sigue oculto por defecto */
     border: 1px solid #cce2ff;
+    white-space: nowrap; /* Evita que el texto se parta en dos líneas */
 }
 
 /* --- Estilos del Modo Oscuro --- */

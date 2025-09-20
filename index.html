@@ -18,31 +18,35 @@
 
         <h1>Traductor IA ⚡️</h1>
         
-        <!-- Nuevo contenedor para mostrar el idioma detectado -->
-        <div id="detected-language-box" class="detected-language"></div>
-
         <div class="translator-container">
             <div class="input-section">
                 <textarea id="text-input" placeholder="Escribe algo para traducir..."></textarea>
                 <button id="clear-btn" class="icon-btn" title="Limpiar texto">✖️</button>
             </div>
             
+            <!-- CAMBIOS DENTRO DE ESTE DIV -->
             <div class="controls">
-                <div class="language-selector-container">
-                    <label for="language-selector">Traducir a:</label>
-                    <select id="language-selector">
-                        <option value="Inglés">Inglés</option>
-                        <option value="Ruso">Ruso</option>
-                        <option value="Español">Español</option>
-                        <option value="Chino Mandarín">Chino Mandarín</option>
-                        <option value="Francés">Francés</option>
-                        <option value="Alemán">Alemán</option>
-                        <option value="Italiano">Italiano</option>
-                        <option value="Hindi">Hindi</option>
-                        <option value="Árabe">Árabe</option>
-                        <option value="Portugués">Portugués</option>
-                    </select>
+                <!-- Nuevo contenedor para agrupar los elementos de la izquierda -->
+                <div class="left-controls">
+                    <div class="language-selector-container">
+                        <label for="language-selector">Traducir a:</label>
+                        <select id="language-selector">
+                            <option value="Inglés">Inglés</option>
+                            <option value="Ruso">Ruso</option>
+                            <option value="Español">Español</option>
+                            <option value="Chino Mandarín">Chino Mandarín</option>
+                            <option value="Francés">Francés</option>
+                            <option value="Alemán">Alemán</option>
+                            <option value="Italiano">Italiano</option>
+                            <option value="Hindi">Hindi</option>
+                            <option value="Árabe">Árabe</option>
+                            <option value="Portugués">Portugués</option>
+                        </select>
+                    </div>
+                    <!-- Hemos movido el cuadro de idioma detectado aquí -->
+                    <div id="detected-language-box" class="detected-language"></div>
                 </div>
+
                 <button id="translate-btn">Traducir</button>
             </div>
 
