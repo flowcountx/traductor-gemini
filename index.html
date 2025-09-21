@@ -9,7 +9,7 @@
     
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -24,12 +24,11 @@
                 <button id="clear-btn" class="icon-btn" title="Limpiar texto">✖️</button>
             </div>
             
-            <!-- CAMBIOS DENTRO DE ESTE DIV -->
             <div class="controls">
-                <!-- Nuevo contenedor para agrupar los elementos de la izquierda -->
                 <div class="left-controls">
                     <div class="language-selector-container">
                         <label for="language-selector">Traducir a:</label>
+                        <!-- Lista de idiomas con Neerlandés y Papiamento añadidos -->
                         <select id="language-selector">
                             <option value="Inglés">Inglés</option>
                             <option value="Ruso">Ruso</option>
@@ -37,13 +36,14 @@
                             <option value="Chino Mandarín">Chino Mandarín</option>
                             <option value="Francés">Francés</option>
                             <option value="Alemán">Alemán</option>
+                            <option value="Neerlandés">Neerlandés</option>
                             <option value="Italiano">Italiano</option>
                             <option value="Hindi">Hindi</option>
                             <option value="Árabe">Árabe</option>
                             <option value="Portugués">Portugués</option>
+                            <option value="Papiamento">Papiamento</option>
                         </select>
                     </div>
-                    <!-- Hemos movido el cuadro de idioma detectado aquí -->
                     <div id="detected-language-box" class="detected-language"></div>
                 </div>
 
